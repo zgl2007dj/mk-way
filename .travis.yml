@@ -17,6 +17,3 @@ script: npm test
 
 cache:
   yarn: true
-
-addons:
-  sauce_connect: true
