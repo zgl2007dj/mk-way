@@ -1,13 +1,19 @@
 sudo: required
-language: node_js
-node_js:
-  - "6"
+language: java
+
+jdk:
+  - oraclejdk8
+
+env:
+  - NODE_VERSION= 6.10.0
+
 install:
+  - nvm install $NODE_VERSION
   - yarn
-before_script:
-  - sudo apt-get update
-  - sudo apt-get install oracle-java8-installer
-  - sudo update-java-alternatives -s java-8-oracle
-script: npm test
+
+script:
+  - nvm use $NODE_VERSION
+  - npm test
+
 cache:
   yarn: true
