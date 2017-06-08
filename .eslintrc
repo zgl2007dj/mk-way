@@ -1,0 +1,42 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "_": true,
+    "define": true,
+    "import": true,
+    "Hammer": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true
+  },
+  plugins:[
+    'html'
+  ],
+  "extends": "standard",
+  "rules": {
+    "arrow-parens": [2, "as-needed"],
+    "space-before-function-paren": 0,
+    "semi": 0,
+    "no-undef": ["error", { "typeof": false }],
+    "one-var": 0,
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+    "eol-last": 0,
+    "no-eval": 0,
+    "no-throw-literal": 0,
+    "no-unused-vars": 0,
+    "spaced-comment": 0,
+    "no-constant-condition": 0,
+    "no-tabs": 0,
+    "block-spacing": 0
+  }
+}

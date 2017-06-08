@@ -1,0 +1,11 @@
+sudo: required
+language: node_js
+node_js:
+  - "6"
+install: 
+  - yarn
+before_script:  
+  - echo testing
+script: npm test
+cache:
+  yarn: true
