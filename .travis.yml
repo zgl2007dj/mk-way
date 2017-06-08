@@ -6,7 +6,6 @@ node_js:
 install:
   - yarn
 before_script:
-  - echo testing
+  - echo 123
 script: npm test
-cache:
-  yarn: true
+cache: false
