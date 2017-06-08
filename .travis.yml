@@ -20,8 +20,9 @@
 
 language: java
 
+jdk: oraclejdk8
+
 install:
-  - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
   - npm install
