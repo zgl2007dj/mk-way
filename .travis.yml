@@ -6,6 +6,8 @@ node_js:
 install:
   - yarn
 before_script:
-  - echo 123
+  - apt-get update
+  - apt-get install oracle-java8-installer
+  - update-java-alternatives -s java-8-oracle
 script: npm test
 cache: false
