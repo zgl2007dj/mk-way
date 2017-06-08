@@ -1,19 +1,30 @@
-sudo: required
+# sudo: required
 
-language: node_js
+# language: node_js
 
-node_js:
-  - "6"
+# node_js:
+#   - "6"
+
+# install:
+#   - yarn
+
+# before_script:
+#   - sudo apt-get update
+#   - sudo apt-get install oracle-java8-installer
+#   - sudo update-java-alternatives -s java-8-oracle
+
+# script: npm test
+
+# cache:
+#   yarn: true
+
+language: java
 
 install:
-  - yarn
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
+  - npm install
 
-before_script:
-  - sudo apt-get update
-  - sudo apt-get install oracle-java8-installer
-  - sudo update-java-alternatives -s java-8-oracle
-
-script: npm test
-
-cache:
-  yarn: true
+script:
+  - npm test
