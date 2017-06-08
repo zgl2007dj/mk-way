@@ -20,6 +20,11 @@ before_install:
 
 script: npm test
 
-
 cache:
   yarn: true
+
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
