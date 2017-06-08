@@ -23,8 +23,9 @@ script: npm test
 cache:
   yarn: true
 
-deploy:
-  provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master
+env:
+  global:
+    - "FTP_USER=user"
+    - "FTP_PASSWORD=password"
+after_success:
+  - echo after_success
