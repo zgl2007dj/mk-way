@@ -1,18 +1,19 @@
 sudo: required
 
-language:
- - node_js
- - java
+language: node_js
 
 node_js:
   - "6"
 
-jdk:
-  - oraclejdk8
+install_script:
+  - sudo apt-get update
+  - sudo apt-get install oracle-java8-installer
+  - sudo update-java-alternatives -s java-8-oracle
 
 install:
   - yarn
 
 script: npm test
+
 cache:
   yarn: true
