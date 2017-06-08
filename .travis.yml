@@ -15,7 +15,7 @@ before_install:
 
   # https://docs.travis-ci.com/user/gui-and-headless-browsers/
   # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
+  - chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost
 
 before_script:
   - phantomjs --version
