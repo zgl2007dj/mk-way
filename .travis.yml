@@ -18,7 +18,9 @@ before_install:
   # start your web application and listen on `localhost`
   #- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
 
-script: npm test
+script:
+  - npm test
+  - npm run build
 
 cache:
   yarn: true
@@ -28,4 +30,8 @@ env:
     - "FTP_USER=user"
     - "FTP_PASSWORD=password"
 after_success:
-  - echo after_success
+  - ls dist
+
+branches:
+  only:
+  - master
