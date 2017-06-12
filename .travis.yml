@@ -8,7 +8,7 @@ install:
 before_install:
   # Decrypt the private key
   - openssl aes-256-cbc -K $encrypted_10bf0941d682_key -iv $encrypted_10bf0941d682_iv
-    -in travis_deploy.enc -out travis_deploy -d
+    -in .travis/travis_deploy.enc -out travis_deploy -d
   # Set the permission of the key
   - chmod 600 travis_deploy
 
@@ -16,7 +16,7 @@ before_install:
   - cp travis_deploy ~/.ssh/travis_deploy
 
   # Copy SSH config
-  - cp travis_config ~/.ssh/config
+  - cp .travis/ssh_config ~/.ssh/config
 
   # Set Git config
   - git config --global user.name "zgl"
