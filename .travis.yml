@@ -1,37 +1,28 @@
 sudo: required
 dist: trusty
-
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 install:
-  - yarn
-
+- yarn
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install oracle-java8-installer
-  - sudo update-java-alternatives -s java-8-oracle
-
-  - phantomjs --version
-  # https://docs.travis-ci.com/user/gui-and-headless-browsers/
-  # start your web application and listen on `localhost`
-  #- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
-
+- openssl aes-256-cbc -K $encrypted_10bf0941d682_key -iv $encrypted_10bf0941d682_iv
+  -in travis_deploy.enc -out travis_deploy -d
+- sudo apt-get update
+- sudo apt-get install oracle-java8-installer
+- sudo update-java-alternatives -s java-8-oracle
+- phantomjs --version
 script:
-  - npm test
-  - npm run build
-
+- npm test
+- npm run build
 cache:
   yarn: true
-
 env:
   global:
-    - "FTP_USER=user"
-    - "FTP_PASSWORD=password"
+  - FTP_USER=user
+  - FTP_PASSWORD=password
 after_success:
-  - ls dist
-
+- ls dist
 branches:
   only:
   - master
