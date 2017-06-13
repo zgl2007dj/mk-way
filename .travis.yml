@@ -31,13 +31,8 @@ before_install:
   - phantomjs --version
 script:
   - npm test
-  # - npm run build
 cache:
   yarn: true
-env:
-  global:
-    - FTP_USER=user
-    - FTP_PASSWORD=password
 after_success:
   #start the ssh agent
   - eval "$(ssh-agent -s)"
