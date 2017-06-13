@@ -38,11 +38,9 @@ after_success:
   - eval "$(ssh-agent -s)"
   # this key should have push access, set github relative-project deploy with writeable
   - ssh-add ~/.ssh/travis_deploy
-  - git remote add deploy git@github.com:zgl2007dj/mk-way.git
-  - git push deploy master
-  - ssh zouguoliang@130.211.247.128
-  - pwd
-  - ls -al
+  # - git remote add deploy git@github.com:zgl2007dj/mk-way.git
+  # - git push deploy master
+  - scp -r ./dist/* zouguoliang@130.211.247.128:/home/zouguoliang/workspace/blog/www
 branches:
   only:
     - master
