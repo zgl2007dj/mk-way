@@ -3,3 +3,9 @@ Host github.com
   StrictHostKeyChecking no
   IdentityFile ~/.ssh/travis_deploy
   IdentitiesOnly yes
+
+Host 130.211.247.128
+  User zouguoliang
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/travis_deploy
+  IdentitiesOnly yes
