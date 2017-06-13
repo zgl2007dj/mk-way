@@ -31,7 +31,7 @@ before_install:
   - phantomjs --version
 script:
   - npm test
-  - npm run build
+  # - npm run build
 cache:
   yarn: true
 env:
@@ -44,7 +44,7 @@ after_success:
   # this key should have push access, set github relative-project deploy with writeable
   - ssh-add ~/.ssh/travis_deploy
   - git remote add deploy git@github.com:zgl2007dj/mk-way.git
-  - git push deploy
+  - git push deploy master
 branches:
   only:
     - master
