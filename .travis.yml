@@ -31,6 +31,7 @@ before_install:
   - phantomjs --version
 script:
   - npm test
+  - npm run build
 cache:
   yarn: true
 after_success:
@@ -40,7 +41,7 @@ after_success:
   - ssh-add ~/.ssh/travis_deploy
   # - git remote add deploy git@github.com:zgl2007dj/mk-way.git
   # - git push deploy master
-  - scp -r ./dist/* zouguoliang@130.211.247.128:/home/zouguoliang/workspace/blog/www
+  - scp -r dist/* zouguoliang@130.211.247.128:/home/zouguoliang/workspace/blog/www
 branches:
   only:
     - master
