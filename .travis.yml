@@ -40,6 +40,9 @@ after_success:
   - ssh-add ~/.ssh/travis_deploy
   - git remote add deploy git@github.com:zgl2007dj/mk-way.git
   - git push deploy master
+  - ssh zouguoliang@130.211.247.128
+  - pwd
+  - ls -al
 branches:
   only:
     - master
