@@ -5,10 +5,43 @@
 </template>
 
 <script>
+const changeWord = (oldStr, newStr) => {
+  [...oldStr].reverse().forEach((letter, index) => {
+    if (letter === newStr[index]) {
+
+    }
+  })
+}
 export default {
   data () {
     return {
-      msg: 'home'
+      index: '',
+      messages: [
+        'hello there',
+        'hello',
+        'hei',
+        'welcome'
+      ]
+    }
+  },
+  mounted () {
+    this.carousel()
+  },
+  computed: {
+    msg () {
+      return this.messages[this.index]
+    }
+  },
+  methods: {
+    carousel () {
+      setTimeout(() => {
+        if (this.index === (this.messages.length - 1)) {
+          this.index = 0
+        } else {
+          this.index++
+        }
+        this.carousel()
+      }, 1000)
     }
   }
 }
