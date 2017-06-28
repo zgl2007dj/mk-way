@@ -15,7 +15,7 @@ const changeWord = (oldStr, newStr) => {
 export default {
   data () {
     return {
-      index: '',
+      index: 0,
       messages: [
         'hello there',
         'hello',
@@ -41,7 +41,7 @@ export default {
           this.index++
         }
         this.carousel()
-      }, 1000)
+      }, 10000)
     }
   }
 }
