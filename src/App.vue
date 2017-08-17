@@ -10,7 +10,10 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted() {
+    document.body.removeChild(document.getElementById('pageLoading'));
+  }
 }
 </script>
 

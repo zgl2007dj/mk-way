@@ -17,10 +17,7 @@ export default {
     return {
       index: 0,
       messages: [
-        'hello there',
-        'hello',
-        'hei',
-        'welcome'
+        '当困难选择我的时候，是不是机会也选择了我'
       ]
     }
   },
